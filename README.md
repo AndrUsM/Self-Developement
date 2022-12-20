@@ -44,3 +44,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+# project structure
+ * components
+    - "use-cases" layer: decomposed components, implemetation logic for this components;
+    - controllers: presenters (composed pages), pages routing, base logic for this.
