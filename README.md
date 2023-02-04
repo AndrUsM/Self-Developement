@@ -46,6 +46,9 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 
+# project requirements:
+- node v18.04
+
 # project structure
  * components
     - "use-cases" layer: decomposed components, implemetation logic for this components;
