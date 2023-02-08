@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import ApplicationRouter from './controllers/router';
+import { Provider } from 'react-redux';
+import { reduxStore } from './framework-drivers/storages/redux-storage/redux-storage.store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
   <React.StrictMode>
-    <ApplicationRouter></ApplicationRouter>
+    <Provider store={reduxStore}>
+      <ApplicationRouter/>
+    </Provider>
   </React.StrictMode>
 )
 
