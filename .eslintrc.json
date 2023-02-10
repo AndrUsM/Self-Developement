@@ -1,0 +1,53 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "standard-with-typescript"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": [ "./tsconfig.json" ] 
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-tabs":"off",
+    "no-trailing-spaces": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/consistent-type-definitions": "warn",
+    "@typescript-eslint/semi": ["warn", "always"],
+    "no-extra-semi": "off",
+    "dot-notation":"off",
+    "no-console": "warn",
+    "no-empty": "warn",
+    "no-irregular-whitespace":"warn",
+    "max-len": [
+      "warn",
+      {
+        "code": 140,
+        "comments": 100,
+        "tabWidth": 2,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "indent": [  "warn", 2 ],
+    "padded-blocks": "warn",
+    "no-mixed-spaces-and-tabs": "off",
+    "@typescript-eslint/indent": ["warn", 2],
+    "@typescript-eslint/quotes": ["warn", "single"],
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "multiline-ternary":"error",
+    "no-extra-boolean-cast": "warn"
+  }
+}
