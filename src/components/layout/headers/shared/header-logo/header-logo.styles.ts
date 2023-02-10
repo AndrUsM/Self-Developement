@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderLogoContainer = styled.div`
   display: block;
@@ -13,6 +13,4 @@ export const HeaderLogoImage = styled.div`
   width: 80px;
 `;
 
-export const HeaderPhrase = styled.div`
-  dis
-`;
+export const HeaderPhrase = styled.div``;

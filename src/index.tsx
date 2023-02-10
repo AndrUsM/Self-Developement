@@ -7,14 +7,14 @@ import { reduxStore } from './framework-drivers/storages/redux-storage/redux-sto
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
-)
+);
 root.render(
   <React.StrictMode>
     <Provider store={reduxStore}>
       <ApplicationRouter/>
     </Provider>
   </React.StrictMode>
-)
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

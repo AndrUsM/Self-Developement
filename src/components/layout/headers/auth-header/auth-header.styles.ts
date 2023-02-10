@@ -28,4 +28,3 @@ export const AuthHeaderLink = styled.a`
     color: orange;
   }
 `;
-
