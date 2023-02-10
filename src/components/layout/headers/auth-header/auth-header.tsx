@@ -1,4 +1,4 @@
-import { AuthHeader } from "./auth-header.styles";
+import { AuthHeader } from './auth-header.styles';
 
 export function AuthHeaderComponent() {
   return (
@@ -6,4 +6,4 @@ export function AuthHeaderComponent() {
       <AuthHeaderComponent/>
     </AuthHeader>
   );
-}
+};

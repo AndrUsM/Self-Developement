@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   AuthorithedLayoutDefaultContainerMain,
   AuthorithedLayoutDefaultContainerHeader,
@@ -28,4 +28,4 @@ export function AuthorithedLayoutDefault(props: {
       <AuthorithedLayoutDefaultContainerFooter/>
     </AuthorithedLayoutDefaultContainer>
   );
-}
+};

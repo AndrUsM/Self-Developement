@@ -1,17 +1,16 @@
-import axios, { AxiosRequestConfig } from "axios";
-import { baseUrl } from "./request-service.config";
-import { DefaultConfigInputParamsType } from "./request-service.type";
+import axios, { type AxiosRequestConfig } from 'axios';
+import { baseUrl } from './request-service.config';
+import { type DefaultConfigInputParamsType } from './request-service.type';
 
 export default class RequestService {
-  public request <T>(params: DefaultConfigInputParamsType): Promise<T> {
-
-    return axios(
+  async request <T>(params: DefaultConfigInputParamsType): Promise<T> {
+    return await axios(
       this.setDefaultConfig(params),
     );
   }
 
-  public get<T> (path: string, params: Record<string, unknown>): Promise<T> {
-    return this.request<T>({
+  async get<T> (path: string, params: Record<string, unknown>): Promise<T> {
+    return await this.request<T>({
       url: path,
       method: 'GET',
       config: {
@@ -20,8 +19,8 @@ export default class RequestService {
     });
   }
 
-  public post<T> (path: string, params: Record<string, unknown>): Promise<T> {
-    return this.request<T>({
+  async post<T> (path: string, params: Record<string, unknown>): Promise<T> {
+    return await this.request<T>({
       url: path,
       method: 'POST',
       config: {
@@ -30,8 +29,8 @@ export default class RequestService {
     });
   }
 
-  public put<T> (path: string, params: Record<string, unknown>): Promise<T> {
-    return this.request<T>({
+  async put<T> (path: string, params: Record<string, unknown>): Promise<T> {
+    return await this.request<T>({
       url: path,
       method: 'PUT',
       config: {
@@ -40,8 +39,9 @@ export default class RequestService {
     });
   }
 
-  public delete<T> (path: string, params: Record<string, unknown>): Promise<T> {
-    return this.request<T>({
+  // disable @typescript-eslint/promise-function-async
+  async delete<T> (path: string, params: Record<string, unknown>): Promise<T> {
+    return await this.request<T>({
       url: path,
       method: 'DELETE',
       config: {
@@ -50,25 +50,25 @@ export default class RequestService {
     });
   }
 
-  public download (path: string, params: Record<string, unknown>): Promise<Blob> {
-    return this.request<Blob> ({
+  async download (path: string, params: Record<string, unknown>): Promise<Blob> {
+    return await this.request<Blob>({
       url: path,
       method: 'GET',
       config: {
-        params: params,
+        params,
         responseType: 'blob',
       },
-    })
+    });
   }
 
-  private setDefaultConfig(params: DefaultConfigInputParamsType): AxiosRequestConfig {
+  private setDefaultConfig (params: DefaultConfigInputParamsType): AxiosRequestConfig {
     return {
       ...params.config,
       url: `${baseUrl}${params.url}`,
-      method: params?.method || params.config?.method,
+      method: params?.method ?? params.config?.method,
       headers: {
-        'Content-Type': params.config?.headers?.["Content-Type"] || 'application/json',
+        'Content-Type': params.config?.headers?.['Content-Type'] ?? 'application/json',
       },
-    }
+    };
   }
 }
