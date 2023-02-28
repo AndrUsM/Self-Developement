@@ -1,20 +1,16 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import RequestService from '../../../../framework-drivers/request-service';
+import { ReqestStatusTypeEnum, type RestResponseType } from '../../../../framework-drivers/request-service/request-service.type';
 
 interface testReturnType {
-  example: {
-    status: string;
-    data: object;
-    error: object;
-  },
+  example: RestResponseType<string>,
 };
 
 // initial state
 const initialState: testReturnType = {
   example: {
-    status: 'iddle',
-    data: {},
-    error: {},
+    content: null,
+    type: ReqestStatusTypeEnum.INITIAL,
   },
 };
 
@@ -43,29 +39,19 @@ const testsSlice = createSlice({
   extraReducers: {
     [thunkFunction.pending.type]: (state, action) => {
       state.example = {
-        status: 'loading',
-        data: {
-          manga: 'test',
-        },
-        error: {},
+        type: ReqestStatusTypeEnum.PENDING,
       };
     },
     [thunkFunction.fulfilled.type]: (state, action) => {
       state.example = {
-        status: 'loaded',
-        data: {
-          manga: 'test',
-        },
-        error: {},
+        type: ReqestStatusTypeEnum.SUCCESS,
+        content: 'test',
       };
     },
     [thunkFunction.rejected.type]: (state, action) => {
       state.example = {
-        status: 'loaded',
-        data: {},
-        error: {
-          text: 'Error data loading',
-        },
+        type: ReqestStatusTypeEnum.ERROR,
+        errorText: 'This is test request',
       };
     },
   },

@@ -1,6 +1,7 @@
+import React from 'react';
 import { AuthHeader } from './auth-header.styles';
 
-export function AuthHeaderComponent() {
+export function AuthHeaderComponent (): JSX.Element {
   return (
     <AuthHeader>
       <AuthHeaderComponent/>

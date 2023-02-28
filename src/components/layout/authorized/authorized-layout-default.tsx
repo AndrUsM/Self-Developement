@@ -12,7 +12,7 @@ import {
 export function AuthorithedLayoutDefault(props: {
   mainContent: React.ReactNode,
   infoTabNode: React.ReactNode,
-}) {
+}): React.ReactNode {
   return (
     <AuthorithedLayoutDefaultContainer>
       <AuthorithedLayoutDefaultContainerHeader/>
