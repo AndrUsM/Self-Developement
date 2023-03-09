@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import ApplicationRouter from './controllers/router';
 import { Provider } from 'react-redux';
 import { reduxStore } from './framework-drivers/storages/redux-storage/redux-storage.store';
+import './general.scss';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
