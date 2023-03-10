@@ -9,17 +9,17 @@ export default class RequestService {
     );
   }
 
-  async get<T> (path: string, params: Record<string, unknown>): Promise<T> {
+  async get<T> (path: string, params?: Record<string, unknown>): Promise<T> {
     return await this.request<T>({
       url: path,
       method: 'GET',
       config: {
         params,
-      },
+      }
     });
   }
 
-  async post<T> (path: string, params: Record<string, unknown>): Promise<T> {
+  async post<T> (path: string, params?: Record<string, unknown>): Promise<T> {
     return await this.request<T>({
       url: path,
       method: 'POST',
@@ -29,7 +29,7 @@ export default class RequestService {
     });
   }
 
-  async put<T> (path: string, params: Record<string, unknown>): Promise<T> {
+  async put<T> (path: string, params?: Record<string, unknown>): Promise<T> {
     return await this.request<T>({
       url: path,
       method: 'PUT',
@@ -40,7 +40,7 @@ export default class RequestService {
   }
 
   // disable @typescript-eslint/promise-function-async
-  async delete<T> (path: string, params: Record<string, unknown>): Promise<T> {
+  async delete<T> (path: string, params?: Record<string, unknown>): Promise<T> {
     return await this.request<T>({
       url: path,
       method: 'DELETE',
@@ -50,7 +50,7 @@ export default class RequestService {
     });
   }
 
-  async download (path: string, params: Record<string, unknown>): Promise<Blob> {
+  async download (path: string, params?: Record<string, unknown>): Promise<Blob> {
     return await this.request<Blob>({
       url: path,
       method: 'GET',
