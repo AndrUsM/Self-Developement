@@ -1,3 +1,4 @@
 export enum LoginFormReducerActionsEnum {
-  "LOGIN"
-}
+  'LOGIN',
+  'CHANGE_LOGIN_FIELD_TYPE',
+};

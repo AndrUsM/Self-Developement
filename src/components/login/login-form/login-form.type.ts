@@ -3,7 +3,7 @@ export interface LoginFormPropsInputType {
 }
 
 export interface LoginFormStateType {
-  errors: string;
+  loginType: LoginByFieldTypeEnum;
 }
 
 export interface LoginFormInitialValueType {
@@ -11,3 +11,8 @@ export interface LoginFormInitialValueType {
   email: string;
   password: string;
 }
+
+export enum LoginByFieldTypeEnum {
+  'EMAIL',
+  'NAME',
+};

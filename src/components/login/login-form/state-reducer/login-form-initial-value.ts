@@ -1,5 +1,5 @@
-import { type LoginFormStateType }  from "../login-form.type";
+import { LoginByFieldTypeEnum, type LoginFormStateType } from '../login-form.type';
 
 export const initialLoginFormStateValue: LoginFormStateType = {
-  errors: ''
-}
+  loginType: LoginByFieldTypeEnum.EMAIL,
+};
